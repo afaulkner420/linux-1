@@ -2039,14 +2039,12 @@ static int marlin_sdio_probe(struct sdio_func *sdio_func,
 	ret = sdiohal_probe(sdio_func, id);
 	if (ret)
 		return ret;
-	return sprdwl_probe(dev);
 }
 
 static void marlin_sdio_remove(struct sdio_func *sdio_func)
 {
 	struct device *dev = &sdio_func->dev;
 
-	sprdwl_remove(dev);
 	sdiohal_remove(sdio_func);
 	marlin_remove(dev);
 }
