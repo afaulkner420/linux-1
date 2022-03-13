@@ -4,6 +4,7 @@ ifneq ($(UNISOC_BSP_INCLUDE),)
 ccflags-y += -I$(UNISOC_BSP_INCLUDE)
 endif
 
+obj-m += sprdbt_tty.o
 sprdbt_tty-objs := \
 	tty.o \
 	rfkill.o \
