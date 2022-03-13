@@ -1849,7 +1849,7 @@ static int sdiohal_probe(struct sdio_func *func,
 	return 0;
 }
 
-static void sdiohal_remove(struct sdio_func *func)
+/*static void sdiohal_remove(struct sdio_func *func)
 {
 	struct sdiohal_data_t *p_data = sdiohal_get_data();
 
@@ -1867,7 +1867,7 @@ static void sdiohal_remove(struct sdio_func *func)
 	} else if ((p_data->irq_type == SDIOHAL_RX_EXTERNAL_IRQ) &&
 		(p_data->irq_num > 0))
 		free_irq(p_data->irq_num, &func->dev);
-}
+}*/
 
 static void sdiohal_launch_thread(void)
 {
@@ -2026,9 +2026,9 @@ void marlin_shutdown(void);
 int sprdwl_probe(struct device *dev);
 int sprdwl_remove(struct device *dev);
 
-static int marlin_sdio_probe(struct sdio_func *sdio_func,
+/*static int marlin_sdio_probe(struct sdio_func *sdio_func,
 		   const struct sdio_device_id *id)
-/*{
+{
 	struct device *dev = &sdio_func->dev;
 	int ret;
 
@@ -2056,8 +2056,8 @@ static void marlin_sdio_shutdown(struct device *dev)
 
 static struct sdio_driver uwe5622_driver = {
 	.name = "uwe5622",
-	.probe = marlin_sdio_probe,
-	.remove = marlin_sdio_remove,
+	/*.probe = marlin_sdio_probe,
+	.remove = marlin_sdio_remove,*/
 	.id_table = sdiohal_ids,
 	.drv = {
 		.pm = &sdiohal_pm_ops,
